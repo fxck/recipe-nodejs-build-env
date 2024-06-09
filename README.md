@@ -30,3 +30,5 @@ Futher things to think about when running more complex, highly available Node.js
 - containers are volatile - use Zerops object storage to store your files
 - use Zerops Redis (KeyDB) for caching, storing sessions and pub/sub messaging
 - use more advanced logging lib, such as [winston](https://github.com/winstonjs/winston)
+
+....
