@@ -4,6 +4,8 @@ zerops:
       base: nodejs@20
       envVariables:
         FOO: bar
+        BAR: foo
+        ASDF: ${RUNTIME_DB_NAME}
       prepareCommands:
         - npm install -g typescript
       buildCommands:
