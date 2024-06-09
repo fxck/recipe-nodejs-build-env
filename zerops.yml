@@ -10,6 +10,7 @@ zerops:
         - npm install -g typescript
       buildCommands:
         - npm i
+        - echo $ASDF
         - npm run build
       deployFiles:
         - ./dist
