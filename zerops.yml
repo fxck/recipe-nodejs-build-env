@@ -27,7 +27,7 @@ zerops:
         DB_NAME: database.db
       startCommands:
         - command: npm run start:prod
-        - command: litestream replicate -config=litestream.yml
+        - command: litestream replicate -config=litestream.yml $DB_NAME
           initCommands:
             - zsc execOnce $appVersionId -- litestream restore -config=litestream.yml
       healthCheck:
