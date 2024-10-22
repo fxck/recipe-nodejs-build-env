@@ -7,7 +7,7 @@ const app = express();
 
 const connectDB = async () => {
   return open({
-    filename: 'database.sqlite',
+    filename: 'database.db',
     driver: sqlite3.Database
   });
 };

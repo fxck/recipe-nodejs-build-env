@@ -13,16 +13,23 @@ zerops:
         - ./package.json
     run:
       base: nodejs@20
+      prepareCommands:
+        - wget https://github.com/benbjohnson/litestream/releases/download/v0.3.13/litestream-v0.3.13-linux-amd64.deb
+        - sudo dpkg -i litestream-v0.3.13-linux-amd64.deb
       ports:
         - port: 3000
           httpSupport: true
       envVariables:
         NODE_ENV: production
-        DB_NAME: db
-        DB_HOST: db
-        DB_USER: db
-        DB_PASS: ${db_password}
-      start: npm run start:prod
+        DB_NAME: database.db
+        LITESTREAM_ACCESS_KEY_ID: ${storage_accessKeyId}
+        LITESTREAM_SECRET_ACCESS_KEY: ${storage_secretAccessKey}
+        LITESTREAM_DB_PATH: s3://storage-prg1.zerops.io/${storage_bucketName}/${DB_NAME}
+      startCommands:
+        - command: npm run start:prod
+        - command: litestream replicate ${DB_NAME} ${LITESTREAM_DB_PATH}
+          initCommands:
+            - zsc execOnce $appVersionId -- litestream restore -o ${DB_NAME} ${LITESTREAM_DB_PATH}
       healthCheck:
         httpGet:
           port: 3000
