@@ -28,8 +28,8 @@ zerops:
       startCommands:
         - command: npm run start:prod
         - command: litestream replicate -config=litestream.yml
-          initCommands:
-            - zsc execOnce $appVersionId -- litestream restore -config=litestream.yml
+          # initCommands:
+          #   - zsc execOnce $appVersionId -- litestream restore -config=litestream.yml
       healthCheck:
         httpGet:
           port: 3000
