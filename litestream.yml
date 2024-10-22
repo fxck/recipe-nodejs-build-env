@@ -2,9 +2,9 @@ access-key-id: $storage_accessKeyId
 secret-access-key: $storage_secretAccessKey
 
 dbs:
-  - path: /var/www/$DB_NAME
+  - path: /var/www
     replicas:
       - bucket: $storage_bucketName
         endpoint: $storage_apiUrl
-        path: $DB_NAME
+        path: /
         force-path-style: true
