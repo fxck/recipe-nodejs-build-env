@@ -5,6 +5,7 @@ dbs:
   - path: /var/www
     replicas:
       - bucket: $storage_bucketName
+        type: s3
         endpoint: $storage_apiUrl
         path: /
         force-path-style: true
