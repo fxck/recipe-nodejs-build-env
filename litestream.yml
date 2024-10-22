@@ -5,6 +5,6 @@ dbs:
   - path: $DB_NAME
     replicas:
       - bucket: $storage_bucketName
-        endpoint: $store_apiUrl
+        endpoint: $storage_apiUrl
         path: $DB_NAME
         force-path-style: true
