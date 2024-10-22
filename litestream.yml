@@ -1,0 +1,10 @@
+access-key-id: $storage_accessKeyId
+secret-access-key: $storage_secretAccessKey
+
+dbs:
+  - path: $DB_NAME
+    replicas:
+      - bucket: $storage_bucketName
+        endpoint: $store_apiUrl
+        path: /
+        force-path-style: true
