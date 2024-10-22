@@ -1,4 +1,5 @@
 # Zerops x Node.js
+.
 This is the most bare-bones example of Node.js app running on [Zerops](https://zerops.io) — as few libraries as possible, just a simple endpoint with connnect, read and write to a Zerops PostgreSQL database.
 
 ![nodejs](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/svg/cover-nodejs.svg)
